@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="FormLibros">
+            <p:growl/>
+            <p:panel header="Formulario ingreso libros: " footer="Por Gerardo">
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="codigo" for="codigo"/>
+                    <p:inputText id="codigo" value="#{librosBean.codigo}" rendered="true"/>
+                    <p:message for="codigo"/>
+                    <h:outputLabel value="titulo" for="titulo"/>
+                    <p:inputText id="titulo" value="#{librosBean.titulo}" rendered="true"/>
+                    <p:message for="titulo"/>
+                    <h:outputLabel value="autor" for="autor"/>
+                    <p:inputText id="autor" value="#{librosBean.autor}" rendered="true"/>
+                    <p:message for="autor"/>
+                    <h:outputLabel value="editorial" for="editorial"/>
+                    <p:inputText id="editorial" value="#{librosBean.editorial}" rendered="true"/>
+                    <p:message for="editorial"/> 
+                    <h:outputLabel value="edicion" for="edicion"/>
+                    <p:inputText id="edicion" value="#{librosBean.edicion}" rendered="true"/>
+                    <p:message for="edicion"/> 
+                    <h:panelGroup/>
+                    <p:commandButton id="bt" ajax="false" action="#{librosBean.guardarLibro()}" value="Guardar" icon="ui-icon-disk"/>                 
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+        <h:outputText value="&lt;br/&gt;" escape="false"/>
+        <h:outputText value="&lt;br/&gt;" escape="false"/>
+        <h:form>
+            <p:panel header="Buscar Libro" footer="Por Gerardo">
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="codigo" for="codigo"/>
+                    <p:inputText id="codigo" value="#{librosBean.codigo}" rendered="true"/>
+                    <p:message for="codigo"/>
+                    <h:panelGroup/>
+                    <p:commandButton id="bt2" ajax="false" action="#{librosBean.buscarLibro()}" value="Buscar" icon="ui-icon-search"/>                 
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+
